@@ -27,6 +27,7 @@ function Register() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log("hi");
     if(handleValidation()){
       const {password, confirmPassword, name, username, email} = values;
       const {data} = await axios.post(registerRoute, {
@@ -40,6 +41,7 @@ function Register() {
       }
       if(data.status === true){
         localStorage.setItem("app-user", JSON.stringify(data.user));
+        console.log("bye");
         navigate("/chat");
       }
     }

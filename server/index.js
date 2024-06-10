@@ -32,7 +32,7 @@ const io = socket(server, {
     //     credentials: true,
     // }
     cors: {
-            origin: "",
+            origin: "https://chat-app-3-0-frontend.vercel.app/",
             credentials: true
     }
 })

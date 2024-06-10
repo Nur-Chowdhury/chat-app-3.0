@@ -11,8 +11,9 @@ const app = express();
 require("dotenv").config();
 
 const corsOptions = {
-    origin: "https://chat-app-3-0-frontend.vercel.app",
+    origin: ["https://chat-app-3-0-frontend.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
 };
 
 app.use(cors(corsOptions));
@@ -37,7 +38,9 @@ const io = socket(server, {
     //     credentials: true,
     // }
     cors: {
-            origin: "https://chat-app-3-0-frontend.vercel.app/",
+        origin: ["https://chat-app-3-0-frontend.vercel.app/"],
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        credentials: true,
     }
 })
 

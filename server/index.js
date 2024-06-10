@@ -10,7 +10,13 @@ const socket = require("socket.io");
 const app = express();
 require("dotenv").config();
 
-app.use(cors());
+const corsOptions = {
+    origin: "https://chat-app-3-0-frontend.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URL, {
